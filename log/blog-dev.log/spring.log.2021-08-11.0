@@ -1,0 +1,53 @@
+2021-08-11 16:41:37.079  INFO 13300 --- [restartedMain] com.tjh.BlogApplication                  : Starting BlogApplication using Java 1.8.0_275 on LAPTOP-EG69D0DP with PID 13300 (E:\doc\blog\target\classes started by asus in E:\doc\blog)
+2021-08-11 16:41:37.105 DEBUG 13300 --- [restartedMain] com.tjh.BlogApplication                  : Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-08-11 16:41:37.105  INFO 13300 --- [restartedMain] com.tjh.BlogApplication                  : The following profiles are active: dev
+2021-08-11 16:41:37.202  INFO 13300 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-08-11 16:41:37.202  INFO 13300 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-08-11 16:41:39.246  INFO 13300 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-08-11 16:41:39.255  INFO 13300 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-11 16:41:39.256  INFO 13300 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-08-11 16:41:39.377  INFO 13300 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-11 16:41:39.377  INFO 13300 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2173 ms
+2021-08-11 16:41:40.290  INFO 13300 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-11 16:41:40.379  INFO 13300 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-11 16:41:40.934  INFO 13300 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-11 16:41:40.972  INFO 13300 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-08-11 16:41:40.981  INFO 13300 --- [restartedMain] com.tjh.BlogApplication                  : Started BlogApplication in 5.38 seconds (JVM running for 9.109)
+2021-08-11 16:41:47.416  INFO 13300 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-11 16:41:47.416  INFO 13300 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-11 16:41:47.417  INFO 13300 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-11 16:41:47.457  INFO 13300 --- [http-nio-8081-exec-1] com.tjh.aspect.LogAspect                 : Request : RequestLog{url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.tjh.controller.indexController.toIndex', args=[1, {}]}
+2021-08-11 16:41:47.644  INFO 13300 --- [http-nio-8081-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-08-11 16:41:47.729  INFO 13300 --- [http-nio-8081-exec-2] com.tjh.aspect.LogAspect                 : Request : RequestLog{url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.tjh.controller.indexController.toIndex', args=[1, {}]}
+2021-08-11 16:41:48.523 DEBUG 13300 --- [http-nio-8081-exec-1] c.t.m.BlogMapper.getIndexBlog_COUNT      : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2021-08-11 16:41:48.523 DEBUG 13300 --- [http-nio-8081-exec-2] c.t.m.BlogMapper.getIndexBlog_COUNT      : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id
+2021-08-11 16:41:48.554 DEBUG 13300 --- [http-nio-8081-exec-1] c.t.m.BlogMapper.getIndexBlog_COUNT      : ==> Parameters: 
+2021-08-11 16:41:48.554 DEBUG 13300 --- [http-nio-8081-exec-2] c.t.m.BlogMapper.getIndexBlog_COUNT      : ==> Parameters: 
+2021-08-11 16:41:48.787 DEBUG 13300 --- [http-nio-8081-exec-1] c.t.m.BlogMapper.getIndexBlog_COUNT      : <==      Total: 1
+2021-08-11 16:41:48.787 DEBUG 13300 --- [http-nio-8081-exec-2] c.t.m.BlogMapper.getIndexBlog_COUNT      : <==      Total: 1
+2021-08-11 16:41:48.789 DEBUG 13300 --- [http-nio-8081-exec-2] com.tjh.mapper.BlogMapper.getIndexBlog   : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2021-08-11 16:41:48.789 DEBUG 13300 --- [http-nio-8081-exec-1] com.tjh.mapper.BlogMapper.getIndexBlog   : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2021-08-11 16:41:48.790 DEBUG 13300 --- [http-nio-8081-exec-2] com.tjh.mapper.BlogMapper.getIndexBlog   : ==> Parameters: 8(Integer)
+2021-08-11 16:41:48.790 DEBUG 13300 --- [http-nio-8081-exec-1] com.tjh.mapper.BlogMapper.getIndexBlog   : ==> Parameters: 8(Integer)
+2021-08-11 16:41:48.793 DEBUG 13300 --- [http-nio-8081-exec-2] com.tjh.mapper.BlogMapper.getIndexBlog   : <==      Total: 1
+2021-08-11 16:41:48.793 DEBUG 13300 --- [http-nio-8081-exec-1] com.tjh.mapper.BlogMapper.getIndexBlog   : <==      Total: 1
+2021-08-11 16:41:48.795 DEBUG 13300 --- [http-nio-8081-exec-2] com.tjh.mapper.TypeMapper.getBlogType    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_type t, t_blog b where t.id = b.type_id
+2021-08-11 16:41:48.795 DEBUG 13300 --- [http-nio-8081-exec-1] com.tjh.mapper.TypeMapper.getBlogType    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_type t, t_blog b where t.id = b.type_id
+2021-08-11 16:41:48.796 DEBUG 13300 --- [http-nio-8081-exec-2] com.tjh.mapper.TypeMapper.getBlogType    : ==> Parameters: 
+2021-08-11 16:41:48.796 DEBUG 13300 --- [http-nio-8081-exec-1] com.tjh.mapper.TypeMapper.getBlogType    : ==> Parameters: 
+2021-08-11 16:41:48.816 DEBUG 13300 --- [http-nio-8081-exec-1] com.tjh.mapper.TypeMapper.getBlogType    : <==      Total: 1
+2021-08-11 16:41:48.816 DEBUG 13300 --- [http-nio-8081-exec-2] com.tjh.mapper.TypeMapper.getBlogType    : <==      Total: 1
+2021-08-11 16:41:48.842 DEBUG 13300 --- [http-nio-8081-exec-2] com.tjh.mapper.TagMapper.getBlogTag      : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id
+2021-08-11 16:41:48.842 DEBUG 13300 --- [http-nio-8081-exec-1] com.tjh.mapper.TagMapper.getBlogTag      : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id
+2021-08-11 16:41:48.843 DEBUG 13300 --- [http-nio-8081-exec-2] com.tjh.mapper.TagMapper.getBlogTag      : ==> Parameters: 
+2021-08-11 16:41:48.843 DEBUG 13300 --- [http-nio-8081-exec-1] com.tjh.mapper.TagMapper.getBlogTag      : ==> Parameters: 
+2021-08-11 16:41:48.873 DEBUG 13300 --- [http-nio-8081-exec-2] com.tjh.mapper.TagMapper.getBlogTag      : <==      Total: 2
+2021-08-11 16:41:48.879 DEBUG 13300 --- [http-nio-8081-exec-1] com.tjh.mapper.TagMapper.getBlogTag      : <==      Total: 2
+2021-08-11 16:41:48.901 DEBUG 13300 --- [http-nio-8081-exec-1] c.t.m.BlogMapper.getAllRecommendBlog     : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc;
+2021-08-11 16:41:48.901 DEBUG 13300 --- [http-nio-8081-exec-2] c.t.m.BlogMapper.getAllRecommendBlog     : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc;
+2021-08-11 16:41:48.901 DEBUG 13300 --- [http-nio-8081-exec-1] c.t.m.BlogMapper.getAllRecommendBlog     : ==> Parameters: 
+2021-08-11 16:41:48.901 DEBUG 13300 --- [http-nio-8081-exec-2] c.t.m.BlogMapper.getAllRecommendBlog     : ==> Parameters: 
+2021-08-11 16:41:48.903 DEBUG 13300 --- [http-nio-8081-exec-1] c.t.m.BlogMapper.getAllRecommendBlog     : <==      Total: 1
+2021-08-11 16:41:48.903 DEBUG 13300 --- [http-nio-8081-exec-2] c.t.m.BlogMapper.getAllRecommendBlog     : <==      Total: 1
+2021-08-11 16:41:48.905  INFO 13300 --- [http-nio-8081-exec-1] com.tjh.aspect.LogAspect                 : Return ------ index
+2021-08-11 16:41:48.905  INFO 13300 --- [http-nio-8081-exec-2] com.tjh.aspect.LogAspect                 : Return ------ index
