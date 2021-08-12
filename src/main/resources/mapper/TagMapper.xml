@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.tjh.mapper.TagMapper">
+
+	<!--保存标签-->
+	<insert id="saveTag" parameterType="Tag">
+		insert into t_tag values (#{id},#{name});
+	</insert>
+
+	<!--通过id获得标签-->
+	<select id="getTag" resultType="Tag">
+		select id,name from t_tag where id = #{id};
+	</select>
+
+	<!--通过标签名获取标签-->
+	<select id="getTagByName" resultType="Tag">
+		select * from t_tag where name = #{name};
+	</select>
+
+	<!--获得所有的标签-->
+	<select id="getAllTag" resultType="Tag">
+		select * from t_tag
+	</select>
+
+	<!--更新标签-->
+	<update id="updateTag" parameterType="Tag">
+        update t_tag set name = #{name} where id = #{id};
+    </update>
+
+	<!--通过id删除标签-->
+	<delete id="deleteTag">
+		delete from t_tag where id = #{id};
+	</delete>
+
+
+	<!--每个Tag类保存自己标签内的blog数（List<blogs>）-->
+	<resultMap id="tags" type="Tag">
+		<id property="id" column="tid"/>
+		<result property="name" column="name"/>
+		<collection property="blogs" ofType="Blog">
+			<id property="id" column="bid"/>
+			<result property="title" column="title"/>
+		</collection>
+	</resultMap>
+
+	<!--由于是多对多，所以三个表联合查询-->
+	<select id="getBlogTag" resultMap="tags">
+        select t.id tid, t.name, b.id bid, b.title
+        from t_tag t, t_blog b, t_blog_tags bt
+        where t.id = bt.tag_id and b.id = bt.blog_id
+    </select>
+
+
+	<delete id="deleteBlogAndTagFromTag">
+        delete bt from t_blog_tags bt left join t_tag t on t.id = bt.tag_id where bt.tag_id = #{id};
+    </delete>
+
+</mapper>

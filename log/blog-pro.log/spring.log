@@ -1,0 +1,4 @@
+2021-03-19 09:22:29.565  INFO 10664 --- [restartedMain] com.tjh.BlogApplication                  : Starting BlogApplication using Java 1.8.0_275 on LAPTOP-EG69D0DP with PID 10664 (E:\IdeaProjects\blog\target\classes started by asus in E:\IdeaProjects\blog)
+2021-03-19 09:22:29.570  INFO 10664 --- [restartedMain] com.tjh.BlogApplication                  : The following profiles are active: pro
+2021-03-19 09:22:36.986  WARN 10664 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-19 09:22:38.350  INFO 10664 --- [restartedMain] com.tjh.BlogApplication                  : Started BlogApplication in 10.206 seconds (JVM running for 12.069)

@@ -1,0 +1,28 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: dev
+#    i18n国际化配置
+  messages:
+    basename: i18n/messages
+
+# 评论头像地址
+comment.avatar: /images/pangluozi.jpg
+
+
+
+#resources:
+#  add-mappings: true
+
+
+# 2021.03.16 前端页面时间
+
+server:
+  port: 8081
+
+# 整合mybatis
+mybatis:
+  type-aliases-package: com.tjh.entity
+  mapper-locations: classpath:mapper/*.xml
+
